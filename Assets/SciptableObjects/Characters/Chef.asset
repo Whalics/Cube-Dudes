@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2b4f01818f6b741bb0f40b7771c4c2, type: 3}
+  m_Name: Chef
+  m_EditorClassIdentifier: 
+  name: Chef
+  myCharacter: 2
+  description: 
+  meshMaterial: {fileID: 2100000, guid: 8045178f1062e2f459ca05fc17cdfb57, type: 2}
+  characterCardArtwork: {fileID: 0}
+  characterIndex: 3
+  health: 14
+  flicks: 1
+  damage: 1

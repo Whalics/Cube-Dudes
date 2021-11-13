@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2b4f01818f6b741bb0f40b7771c4c2, type: 3}
+  m_Name: Hypno
+  m_EditorClassIdentifier: 
+  name: Hypno
+  myCharacter: 3
+  description: Take control of another player's character.
+  meshMaterial: {fileID: 2100000, guid: 678dfff086814cf4fb7330d1be21ae92, type: 2}
+  characterCardArtwork: {fileID: 0}
+  characterIndex: 4
+  health: 12
+  flicks: 1
+  damage: 1
