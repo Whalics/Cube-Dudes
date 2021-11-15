@@ -6,20 +6,31 @@ using TMPro;
 
 public class CharacterClass : MonoBehaviour
 {
+    [Tooltip("The maximum amount of health this character has.")]
     public int maxHealth;
+    [Tooltip("The current amount of health this character has.")]
     public int health;
+    [Tooltip("The maximum number of flicks this character has per turn.")]
     [SerializeField] int _maxFlicks;
+    [Tooltip("The number of flicks this character has left this turn.")]
     [SerializeField] int _flicks;
+    [Tooltip("The amount of damage this character deals")]
     public int damage;
-
+    [Tooltip("The scriptable object that defines this character.")]
     public Character character;
-    
+
+    [Tooltip("The character's name.")]
     public TMP_Text nameText;
+    [Tooltip("A brief description of the character, subject to change.")]
     public TMP_Text descriptionText;
+     [Tooltip("The artwork that will appear on the character's ability card")]
     public Image cardImage;
+    [Tooltip("The material that will be placed on the player prefab.")]
     public Material charMaterial;
+    [Tooltip("The player prefab's material renderer, set as an array for each part of the character's body.")]
     public MeshRenderer[] meshRenderer;
-    
+    [Tooltip("The image the appears on the turn window between turns.")]
+    public Sprite portrait;
 
     [SerializeField] PlayerHealthController playerhealthcontroller;
 
@@ -37,7 +48,7 @@ public class CharacterClass : MonoBehaviour
         _maxFlicks = character.flicks;
         _flicks = _maxFlicks;
         damage = character.damage;
-
+        portrait = character.portrait;
         
         for(int i = 0; i < meshRenderer.Length; i++){
             meshRenderer[i].material = character.meshMaterial;

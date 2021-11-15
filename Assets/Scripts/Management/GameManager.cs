@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
         return turnmanager.players[turnmanager.playerTurn];
     }
 
+    public int GetPlayerCount(){
+        return turnmanager.players.Length;
+    }
+
     public int GetTurn(){
         return turnmanager.playerTurn;
     }

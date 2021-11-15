@@ -21,3 +21,4 @@ MonoBehaviour:
   health: 14
   flicks: 1
   damage: 2
+  portrait: {fileID: 21300000, guid: 4baca9b7c18b24241a19ce8fc2dafd9b, type: 3}
