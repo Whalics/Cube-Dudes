@@ -30,9 +30,9 @@ public class PlayerCollisionController : MonoBehaviour
             if(collisionRb != null){
                 if(collisionRb.velocity.magnitude < 0.01){
                     if(shootcontroller.isShot && hasCollided){
-                        if(!turnmanager.turnOver){
+                        if(!turnmanager.flickOver){
                             ClearCollisionRb();
-                            StartCoroutine(turnmanager.endTurn());
+                            StartCoroutine(turnmanager.EndFlick());
                         }
                     }
                 }
@@ -40,8 +40,8 @@ public class PlayerCollisionController : MonoBehaviour
         }
 
         if(inMotion && _rb.velocity.magnitude < 0.01f && !hasCollided && shootcontroller.isShot){
-            if(!turnmanager.turnOver){
-            StartCoroutine(turnmanager.endTurn());
+            if(!turnmanager.flickOver){
+            StartCoroutine(turnmanager.EndFlick());
                 
             }
         }
@@ -84,5 +84,10 @@ public class PlayerCollisionController : MonoBehaviour
     public IEnumerator InMotion(){
         yield return new WaitForSeconds(0.2f);
         inMotion = true;
+    }
+    
+    public void ResetCollision(){
+        hasCollided = false;
+        inMotion = false;
     }
 }

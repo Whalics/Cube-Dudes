@@ -20,7 +20,7 @@ public class TimerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!pausetimer)
+        if(!pausetimer && !gamemanager.GetControls())
             DecreaseTime();
     }
 
@@ -29,8 +29,8 @@ public class TimerController : MonoBehaviour
         if(Mathf.Round(timer) < 0)
         timer = 60;
         SetTimer();
-        if(GetTurnTimer() < 0){
-            gamemanager.NextTurn();
+        if(GetTurnTimer() <= 0){
+            gamemanager.EndTurn();
         }
     }
 
@@ -42,6 +42,10 @@ public class TimerController : MonoBehaviour
 
     public void PauseTimer(){
         pausetimer = true;
+    }
+
+    public void ResumeTimer(){
+        pausetimer = false;
     }
 
     public float GetTurnTimer(){

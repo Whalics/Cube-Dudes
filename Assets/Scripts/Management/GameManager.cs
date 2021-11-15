@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
         return turnmanager.players[turnmanager.playerTurn];
     }
 
+    public int GetTurn(){
+        return turnmanager.playerTurn;
+    }
+
     public GameObject GetXPlayer(int player){
         return turnmanager.players[player];
     }
@@ -46,8 +50,6 @@ public class GameManager : MonoBehaviour
         return GetPlayer().GetComponent<PlayerCollisionController>();
     }
 
-    
-
     public CharacterClass GetCharacterClass(){
         return GetPlayer().GetComponent<CharacterClass>();
     }
@@ -57,15 +59,36 @@ public class GameManager : MonoBehaviour
         timercontroller.PauseTimer();
     }
 
-    public void Reset(){
+    public void ResetTurn(){
         shootcontroller.Reset();
         playerinputmanager.Reset();
         timercontroller.ResetTimer();
     }
 
-    public void NextTurn(){
-        turnmanager.NextTurn();
+    public void ResetFlick(){
+        shootcontroller.Reset();
+        playerinputmanager.Reset();
+        timercontroller.ResumeTimer();
     }
 
+    public void EndFlick(){
+        StartCoroutine(turnmanager.EndFlick());
+    }
+
+    public void EndTurn(){
+        StartCoroutine(turnmanager.EndTurn());
+    }
+
+    public bool GetControls(){
+        return playerinputmanager.disableControls;
+    }
+
+    public void DisableControls(){
+        playerinputmanager.disableControls = true;
+    }
+
+    public void EnableControls(){
+        playerinputmanager.disableControls = false;
+    }
     
 }
