@@ -133,7 +133,7 @@
                     "name": "",
                     "id": "71665930-58cb-40ca-bec9-acea81ab3bb4",
                     "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "Controller",
                     "action": "Menu",

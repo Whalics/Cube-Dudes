@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TimerController timercontroller;
     [SerializeField] CharacterClass characterclass;
     [SerializeField] PlayerInputManager playerinputmanager;
+    [SerializeField] HUDMenuController hudmenucontroller;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         flickcontroller = GameObject.Find("Finger").GetComponent<FlickController>();
         timercontroller = GameObject.Find("Time_txt").GetComponent<TimerController>();
         playerinputmanager = GameObject.Find("PlayerInputManager").GetComponent<PlayerInputManager>();
+        hudmenucontroller = GameObject.Find("HUD_cnvs").GetComponent<HUDMenuController>();
     }
 
     public GameObject GetPlayer(){
@@ -63,6 +65,14 @@ public class GameManager : MonoBehaviour
         timercontroller.PauseTimer();
     }
 
+    public void DisplayHUDMenu(){
+        hudmenucontroller.OpenMenu();
+    }
+
+    public void CloseHUDMenu(){
+        hudmenucontroller.CloseMenu();
+    }
+    
     public void ResetTurn(){
         shootcontroller.Reset();
         playerinputmanager.Reset();
@@ -81,6 +91,7 @@ public class GameManager : MonoBehaviour
 
     public void EndTurn(){
         StartCoroutine(turnmanager.EndTurn());
+        hudmenucontroller.CloseMenu();
     }
 
     public bool GetControls(){

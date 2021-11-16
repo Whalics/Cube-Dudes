@@ -12,11 +12,15 @@ public class PlayerInputManager : MonoBehaviour
     public bool moving;
     public bool movePressed;
     public float turnHold;
+    public bool canMenu = true;
+    public float menuBTNPress;
+    public bool menuVisible;
     [SerializeField] ShootController shootcontroller;
     [SerializeField] CameraManager cameramanager;
     [Tooltip("Does not auto assign")]
     [SerializeField] TurnSliderController turnslidercontroller;
     [SerializeField] TurnManager turnmanager;
+    [SerializeField] GameManager gamemanager;
     [SerializeField] float panSpeed;
     public float sliderIncreaseAmount;
     
@@ -30,11 +34,12 @@ public class PlayerInputManager : MonoBehaviour
         shootcontroller = GameObject.Find("ShootController").GetComponent<ShootController>();
         cameramanager = GameObject.Find("CameraRotator").GetComponent<CameraManager>();
         turnmanager = GameObject.Find("TurnManager").GetComponent<TurnManager>();
+        gamemanager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
    
     
     public void OnMove(InputAction.CallbackContext context){
-        if(!disableControls)
+        if(!disableControls && !menuVisible)
         movementInput = context.ReadValue<Vector2>();
         if(Mathf.Abs(movementInput.y) > 0 || Mathf.Abs(movementInput.x) > 0){
             movePressed = true;
@@ -53,18 +58,40 @@ public class PlayerInputManager : MonoBehaviour
         flicked = !context.ReadValue<bool>();
     }
 
+    public void HUDMenu(InputAction.CallbackContext context){
+        if(!disableControls && canMenu)
+        menuBTNPress = context.ReadValue<float>();
+
+        if(menuBTNPress == 1){
+            
+            if(menuVisible){
+                gamemanager.CloseHUDMenu();
+                menuVisible = false;
+            }
+            else if(!menuVisible){
+                gamemanager.DisplayHUDMenu();
+                menuVisible = true;
+            }
+        }
+    }
+
     public void Hold(InputAction.CallbackContext context){
         if(disableControls)
         turnHold = context.ReadValue<float>();
     }
 
     public void OnFlickDown(InputAction.CallbackContext context){
-        if(!disableControls && !flicked)
-        flicking = context.ReadValue<float>();
+        if(!disableControls && !flicked){
+            flicking = context.ReadValue<float>();
+            canMenu = false;
+            menuVisible = false;
+            gamemanager.CloseHUDMenu();
+        }
     }
     
     void Update()
     {
+        
 
         if(disableControls){ //ensures turn values (force slider, etc) get reset during turn window
             flicking = 0f;
@@ -75,10 +102,16 @@ public class PlayerInputManager : MonoBehaviour
         if(flicked && flicking == 0){
             flicked = false;
         }
+        if(menuVisible){
+            movementInput = Vector2.zero;
+        }
         
+        if(!canMenu){
+            menuBTNPress = 0;
+        }
 
         if(movePressed){
-            cameramanager.RotateCamera(-movementInput.x,movementInput.y,panSpeed);
+            cameramanager.RotateCamera(movementInput.x,movementInput.y,panSpeed);
         }
 
         Debug.Log(shootcontroller._forceStrength);
@@ -108,5 +141,6 @@ public class PlayerInputManager : MonoBehaviour
     public void Reset(){
         flicked = false;
         flicking = 0;
+        canMenu = true;
     }
 }
