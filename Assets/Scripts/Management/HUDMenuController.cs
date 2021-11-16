@@ -27,4 +27,6 @@ public class HUDMenuController : MonoBehaviour
     public void SetSelectedButton(GameObject btn){
         eventSystem.SetSelectedGameObject(btn, new BaseEventData(eventSystem));
     }
+
+    
 }
