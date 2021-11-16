@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12363bb97b65fbb408361dec76975ea7, type: 3}
-  m_Name: Cannon
+  m_Name: SkyDive
   m_EditorClassIdentifier: 
-  name: Cannon
-  description: Launch yourself from a cannon, dealing 2 extra damage.
-  artwork: {fileID: 21300000, guid: ed605e726183e824fa36c4cbd06ba976, type: 3}
+  name: Sky Dive
+  description: Drop the player from the sky instead of flicking.
+  artwork: {fileID: 21300000, guid: 9a042a8bcc1b96b40872059287ed582e, type: 3}
