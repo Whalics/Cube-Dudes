@@ -53,6 +53,7 @@ public class ShootController : MonoBehaviour
     
     public void Reset(){
         isShot = false;
+        _forceStrength=25f;
         forceslidercontroller.SetSliderValue(_forceStrength);
     }
 }

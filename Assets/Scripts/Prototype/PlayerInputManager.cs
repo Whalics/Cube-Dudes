@@ -6,10 +6,11 @@ using UnityEngine.InputSystem;
 public class PlayerInputManager : MonoBehaviour
 {
     public InputAction inputController;
-    Vector2 movementInput = Vector2.zero;
+    [SerializeField] Vector2 movementInput = Vector2.zero;
     public bool flicked;
     public float flicking;
     public bool moving;
+    public bool movePressed;
     public float turnHold;
     [SerializeField] ShootController shootcontroller;
     [SerializeField] CameraManager cameramanager;
@@ -30,11 +31,18 @@ public class PlayerInputManager : MonoBehaviour
         cameramanager = GameObject.Find("CameraRotator").GetComponent<CameraManager>();
         turnmanager = GameObject.Find("TurnManager").GetComponent<TurnManager>();
     }
-
+   
+    
     public void OnMove(InputAction.CallbackContext context){
         if(!disableControls)
         movementInput = context.ReadValue<Vector2>();
-        cameramanager.RotateCamera(movementInput.x,-movementInput.y,panSpeed);
+        if(Mathf.Abs(movementInput.y) > 0 || Mathf.Abs(movementInput.x) > 0){
+            movePressed = true;
+        }
+        else
+            movePressed = false;
+        //cameramanager.InvokeRepeating("RotateCamera",0f,0.02f);
+        //cameramanager.RotateCamera(movementInput.x,-movementInput.y,panSpeed);
     }
     public void Moving(){
         moving = true;
@@ -51,12 +59,28 @@ public class PlayerInputManager : MonoBehaviour
     }
 
     public void OnFlickDown(InputAction.CallbackContext context){
-        if(!disableControls)
+        if(!disableControls && !flicked)
         flicking = context.ReadValue<float>();
     }
     
     void Update()
     {
+
+        if(disableControls){ //ensures turn values (force slider, etc) get reset during turn window
+            flicking = 0f;
+            flicked = false;
+            movementInput = Vector2.zero;
+            shootcontroller.Reset();
+        }
+        if(flicked && flicking == 0){
+            flicked = false;
+        }
+        
+
+        if(movePressed){
+            cameramanager.RotateCamera(-movementInput.x,movementInput.y,panSpeed);
+        }
+
         Debug.Log(shootcontroller._forceStrength);
         if(flicking > 0){
             // flicked = true;
