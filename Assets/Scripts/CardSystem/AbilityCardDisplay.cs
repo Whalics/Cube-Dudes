@@ -12,6 +12,7 @@ public class AbilityCardDisplay : MonoBehaviour
     public TMP_Text healthText;
     public TMP_Text damageText;
     public TMP_Text flicksText;
+    public TMP_Text cooldownText;
     public Image cardArt;
     
 
@@ -21,7 +22,9 @@ public class AbilityCardDisplay : MonoBehaviour
 
     public void UpdateInfo(){
         //descriptionText.text = character.description;
+        nameText.text = character.name.ToString();
         healthText.text = "Health: " + character.health.ToString();
+        cooldownText.text = "Ability Cooldown: " + character.cooldown.ToString();
         damageText.text = "Damage: " + character.damage.ToString();
         flicksText.text = "Flicks: " + character.flicks.ToString();
         cardArt.sprite = character.portrait;

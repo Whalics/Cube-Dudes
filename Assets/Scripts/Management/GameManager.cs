@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerInputManager playerinputmanager;
     [SerializeField] HUDMenuController hudmenucontroller;
     [SerializeField] DeckManager deckmanager;
+    [SerializeField] ForceSliderController forceslidercontroller;
     void Start()
     {
         turnmanager = GameObject.Find("TurnManager").GetComponent<TurnManager>();
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
         playerinputmanager = GameObject.Find("PlayerInputManager").GetComponent<PlayerInputManager>();
         hudmenucontroller = GameObject.Find("HUD_cnvs").GetComponent<HUDMenuController>();
         deckmanager = GameObject.Find("DeckManager").GetComponent<DeckManager>();
+        forceslidercontroller = GameObject.Find("ForceStrength_sldr").GetComponent<ForceSliderController>();
     }
 
     public GameObject GetPlayer(){
@@ -120,6 +122,14 @@ public class GameManager : MonoBehaviour
 
     public void EnableControls(){
         playerinputmanager.disableControls = false;
+    }
+
+    public void ForceSliderIn(){
+        forceslidercontroller.SliderIn();
+    }
+
+    public void ForceSliderOut(){
+        forceslidercontroller.SliderOut();
     }
     
 }

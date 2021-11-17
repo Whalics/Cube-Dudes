@@ -7,6 +7,7 @@ public class ForceSliderController : MonoBehaviour
     public Gradient gradient;
     public Image fill;
     public Slider forceSlider;
+    public Animator sliderAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +18,12 @@ public class ForceSliderController : MonoBehaviour
         forceSlider.value = val;
         fill.color = gradient.Evaluate(forceSlider.normalizedValue);
     }
-    // Update is called once per frame
-    void Update()
-    {
+
+    public void SliderIn(){
+        sliderAnimator.Play("In_TEMP");
+    }
+
+    public void SliderOut(){
+        sliderAnimator.Play("Out_TEMP");
     }
 }

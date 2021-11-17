@@ -1645,7 +1645,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh103196
+  m_Name: pb_Mesh26698
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2972,7 +2972,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh102904
+  m_Name: pb_Mesh26392
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4424,7 +4424,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh102890
+  m_Name: pb_Mesh26378
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6552,7 +6552,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh103112
+  m_Name: pb_Mesh26614
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7348,7 +7348,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh103098
+  m_Name: pb_Mesh26600
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7869,6 +7869,7 @@ GameObject:
   - component: {fileID: 1808436684}
   - component: {fileID: 1808436685}
   - component: {fileID: 1808436686}
+  - component: {fileID: 1808436687}
   m_Layer: 5
   m_Name: ForceStrength_sldr
   m_TagString: Untagged
@@ -7892,9 +7893,9 @@ RectTransform:
   m_Father: {fileID: 1163531127}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 89.903}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -852, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -109, y: 0}
   m_SizeDelta: {x: 600, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808436685
@@ -7991,6 +7992,26 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   fill: {fileID: 917545092}
   forceSlider: {fileID: 1808436685}
+  sliderAnimator: {fileID: 1808436687}
+--- !u!95 &1808436687
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808436683}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 171cc3717e0279941a10d398fbe4810d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1829326608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8631,6 +8652,7 @@ MonoBehaviour:
   playerinputmanager: {fileID: 146916802}
   hudmenucontroller: {fileID: 0}
   deckmanager: {fileID: 0}
+  forceslidercontroller: {fileID: 1808436686}
 --- !u!4 &1960161802
 Transform:
   m_ObjectHideFlags: 0

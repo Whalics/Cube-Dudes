@@ -16,6 +16,8 @@ public class CharacterClass : MonoBehaviour
     [SerializeField] int _flicks;
     [Tooltip("The amount of damage this character deals")]
     public int damage;
+    [Tooltip("The cooldown of this character's ability")]
+    public int coolDown;
     [Tooltip("The scriptable object that defines this character.")]
     public Character character;
 
@@ -43,6 +45,7 @@ public class CharacterClass : MonoBehaviour
         //nameText.text = character.name;
         //descriptionText.text = character.description;
         maxHealth = character.health;
+        coolDown = character.cooldown;
         health = maxHealth;
         playerhealthcontroller.SetMaxHealth(maxHealth);
         _maxFlicks = character.flicks;

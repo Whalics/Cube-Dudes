@@ -27,6 +27,8 @@ public class Character : ScriptableObject
     public int flicks;
     [Tooltip("The amount of damage this character deals.")]
     public int damage;
+    [Tooltip("The cooldown of this character's ability")]
+    public int cooldown;
     [Tooltip("The image the appears on the turn window between turns.")]
     public Sprite portrait;
 }

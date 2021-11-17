@@ -82,6 +82,7 @@ public class TurnManager : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(0.1f,0.3f));
         }
         yield return new WaitForSeconds(1.5f);
+        gamemanager.ForceSliderOut();
         if(characterclass.ReturnFlicks() == 0){
             TurnWindow();
             gamemanager.ResetTurn(); //resets shoot controller, input controller, and timer

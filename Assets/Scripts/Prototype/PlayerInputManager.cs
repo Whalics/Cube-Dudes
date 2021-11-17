@@ -85,6 +85,7 @@ public class PlayerInputManager : MonoBehaviour
             flicking = context.ReadValue<float>();
             canMenu = false;
             menuVisible = false;
+            gamemanager.ForceSliderIn();
             gamemanager.CloseHUDMenu();
         }
     }
@@ -126,14 +127,16 @@ public class PlayerInputManager : MonoBehaviour
             Debug.Log("button pressed");
             turnslidercontroller.IncreaseValue(sliderIncreaseAmount);
         }
-        else if(turnHold == 0)
-            turnslidercontroller.ResetSlider();
-
-        if(turnslidercontroller.sliderVal >= 1){
-            turnHold = 0;
-            turnslidercontroller.ResetSlider();
-            StartCoroutine(turnmanager.NextTurn());
-            
+        else if(turnHold == 0){
+            if(turnslidercontroller != null)
+                turnslidercontroller.ResetSlider();
+        }
+        if(turnslidercontroller != null){
+            if(turnslidercontroller.sliderVal >= 1){
+                turnHold = 0;
+                turnslidercontroller.ResetSlider();
+                StartCoroutine(turnmanager.NextTurn());
+            }
             
             
         }
