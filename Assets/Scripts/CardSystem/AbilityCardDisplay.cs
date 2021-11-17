@@ -17,7 +17,6 @@ public class AbilityCardDisplay : MonoBehaviour
 
      
     void Start(){
-        UpdateInfo();
     }
 
     public void UpdateInfo(){

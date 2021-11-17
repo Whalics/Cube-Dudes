@@ -96,7 +96,7 @@ public class TurnManager : MonoBehaviour
     public IEnumerator EndTurn(){ //this is for the timer running out. regardless of flicks remaining, the turn will end.
         gamemanager.ResetTurn(); //resets shoot controller, input controller, and timer
         gamemanager.ResetFlick();
-        TurnWindow();
+        TurnWindow(); 
         yield break;
     }
 
@@ -109,8 +109,7 @@ public class TurnManager : MonoBehaviour
     
     public IEnumerator NextTurn(){
         HideTurnWindow();
-        gamemanager.HideDeck();
-        gamemanager.ShowDeck();
+        
         characterclass = gamemanager.GetCharacterClass();
         characterclass.ResetFlicks();
 
@@ -123,6 +122,9 @@ public class TurnManager : MonoBehaviour
         else{
             playerTurn = 0;
         }
+
+        gamemanager.HideDeck();
+        gamemanager.ShowDeck();
             
         characterclass = gamemanager.GetCharacterClass();
         playercollisioncontroller = gamemanager.GetPlayerCollisionController();

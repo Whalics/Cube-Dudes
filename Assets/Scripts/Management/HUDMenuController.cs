@@ -14,7 +14,7 @@ public class HUDMenuController : MonoBehaviour
     void Start()
     {
         gamemanager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        SetAbilityButtons();
+        
     }
 
     public void AssignAbilityButton(){
@@ -23,13 +23,17 @@ public class HUDMenuController : MonoBehaviour
 
     public void OpenMenu(){
         AssignAbilityButton();
+        SetAbilityButtons();
         SetSelectedButton(abilityButton);
         HUDAnimator.Play("In_TEMP");
     }
 
     void SetAbilityButtons(){
-        for(int i = 0; i < gamemanager.GetPlayerCount(); i++)
-        abilityBTNS[i].GetComponent<AbilityCardDisplay>().character = gamemanager.GetCharacterClass().character;;
+        for(int i = 0; i < gamemanager.GetPlayerCount(); i++){
+        //GameObject player = 
+            abilityBTNS[i].GetComponent<AbilityCardDisplay>().character = gamemanager.GetXPlayer(i).GetComponent<CharacterClass>().character;
+            abilityBTNS[i].GetComponent<AbilityCardDisplay>().UpdateInfo();
+        }
     }
 
     public void CloseMenu(){
