@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Teleporter
   m_EditorClassIdentifier: 
   name: Teleporter
-  description: Teleport between two locations on the map.
+  description: Teleport between two locations on the map!
   artwork: {fileID: 21300000, guid: 84f71e65f36a41647a9c58470f3773fe, type: 3}

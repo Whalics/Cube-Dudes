@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] CharacterClass characterclass;
     [SerializeField] PlayerInputManager playerinputmanager;
     [SerializeField] HUDMenuController hudmenucontroller;
-
+    [SerializeField] DeckManager deckmanager;
     void Start()
     {
         turnmanager = GameObject.Find("TurnManager").GetComponent<TurnManager>();
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         timercontroller = GameObject.Find("Time_txt").GetComponent<TimerController>();
         playerinputmanager = GameObject.Find("PlayerInputManager").GetComponent<PlayerInputManager>();
         hudmenucontroller = GameObject.Find("HUD_cnvs").GetComponent<HUDMenuController>();
+        deckmanager = GameObject.Find("DeckManager").GetComponent<DeckManager>();
     }
 
     public GameObject GetPlayer(){
@@ -38,6 +39,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject GetXPlayer(int player){
         return turnmanager.players[player];
+    }
+    public void ShowDeck(){
+        deckmanager.DisplayDeck();
+    }
+
+    public void HideDeck(){
+        deckmanager.HideDecks();
     }
 
     public Rigidbody GetPlayerRb(){

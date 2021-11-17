@@ -33,7 +33,7 @@ public class PlayerManagerSingleton : MonoBehaviour
 
     public void Set2Player(){
         playerCount = 2;
-        playerCharacters = new Character[3];
+        playerCharacters = new Character[2];
    }
 
    public void Set3Player(){

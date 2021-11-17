@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Trampoline
   m_EditorClassIdentifier: 
   name: Trampoline
-  description: Place a trampoline on the map.
+  description: Place a trampoline on the map!
   artwork: {fileID: 21300000, guid: f4e120ec9fc9f5c4398fb0c739ed8171, type: 3}

@@ -11,8 +11,15 @@ public class CardDisplay : MonoBehaviour
     public TMP_Text descriptionText;
     public Image cardImage;
 
+    // void Start(){
+    //     UpdateInfo();
+    // }
 
-    void Start(){
+    // void OnEnable(){
+    //     UpdateInfo();
+    // }
+
+    public void UpdateInfo(){
         descriptionText.text = card.description;
         cardImage.sprite = card.artwork;
     }
