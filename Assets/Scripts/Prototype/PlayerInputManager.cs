@@ -135,12 +135,21 @@ public class PlayerInputManager : MonoBehaviour
             StartCoroutine(turnmanager.NextTurn());
             
             
+            
         }
     }
     
     public void Reset(){
         flicked = false;
         flicking = 0;
+        if(gamemanager.GetFlicks() == 0)
         canMenu = true;
+        else
+        canMenu = false;
+    }
+
+    public void Unlock(){
+        canMenu = true;
+        menuVisible = false;
     }
 }

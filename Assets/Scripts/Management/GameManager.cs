@@ -37,6 +37,10 @@ public class GameManager : MonoBehaviour
         return turnmanager.playerTurn;
     }
 
+    public int GetFlicks(){
+        return GetPlayer().GetComponent<CharacterClass>().ReturnFlicks();
+    }
+
     public GameObject GetXPlayer(int player){
         return turnmanager.players[player];
     }
@@ -91,6 +95,10 @@ public class GameManager : MonoBehaviour
         shootcontroller.Reset();
         playerinputmanager.Reset();
         timercontroller.ResumeTimer();
+    }
+
+    public void UnlockMenu(){
+        playerinputmanager.Unlock();
     }
 
     public void EndFlick(){

@@ -40,8 +40,10 @@ public class ShootController : MonoBehaviour
     
     public void ShootPlayer(){
         _rb = gamemanager.GetPlayerRb();
+        gamemanager.GetCharacterClass().DecreaseFlicks();
         isShot = true;
         gamemanager.FlickVisuals();
+
 
         _forceDirection = gamemanager.GetPlayerPos() - cam.transform.position;
         _rb.AddForce(_forceDirection * _forceStrength);
