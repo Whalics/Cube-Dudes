@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sky Dive
   description: Drop the player from the sky instead of flicking!
-  artwork: {fileID: 21300000, guid: 9a042a8bcc1b96b40872059287ed582e, type: 3}
+  artwork: {fileID: 21300000, guid: 3aa1999fb913a854789c689143f62075, type: 3}

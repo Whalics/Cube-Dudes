@@ -16,7 +16,7 @@ MonoBehaviour:
   myCharacter: 5
   description: Steal another player's card.
   meshMaterial: {fileID: 2100000, guid: 2d4e32c2b462c9444b91422e2ba6d5a4, type: 2}
-  characterCardArtwork: {fileID: 0}
+  characterCardArtwork: {fileID: 21300000, guid: f266a7dd58bcd9d44865ba2890ddb727, type: 3}
   characterIndex: 6
   health: 11
   flicks: 2

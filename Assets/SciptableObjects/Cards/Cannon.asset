@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Cannon
   description: Launch yourself from a cannon, dealing 2 extra damage!
-  artwork: {fileID: 21300000, guid: ed605e726183e824fa36c4cbd06ba976, type: 3}
+  artwork: {fileID: 21300000, guid: b0c0e91bb88f09349ab412d61f07fbf3, type: 3}

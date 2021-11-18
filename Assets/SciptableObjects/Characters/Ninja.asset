@@ -16,7 +16,7 @@ MonoBehaviour:
   myCharacter: 4
   description: Shroud yourself in illusion.
   meshMaterial: {fileID: 2100000, guid: 8cf5e2c592385ef428132b41346b360d, type: 2}
-  characterCardArtwork: {fileID: 0}
+  characterCardArtwork: {fileID: 21300000, guid: f266a7dd58bcd9d44865ba2890ddb727, type: 3}
   characterIndex: 5
   health: 10
   flicks: 2

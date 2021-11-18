@@ -16,7 +16,7 @@ MonoBehaviour:
   myCharacter: 0
   description: Use any card you're in.
   meshMaterial: {fileID: 2100000, guid: 44004e7415a7f9242a27d885a80f7830, type: 2}
-  characterCardArtwork: {fileID: 0}
+  characterCardArtwork: {fileID: 21300000, guid: f266a7dd58bcd9d44865ba2890ddb727, type: 3}
   characterIndex: 1
   health: 13
   flicks: 1

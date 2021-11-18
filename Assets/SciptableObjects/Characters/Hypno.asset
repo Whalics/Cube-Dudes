@@ -16,7 +16,7 @@ MonoBehaviour:
   myCharacter: 3
   description: Take control of another player's character.
   meshMaterial: {fileID: 2100000, guid: 678dfff086814cf4fb7330d1be21ae92, type: 2}
-  characterCardArtwork: {fileID: 0}
+  characterCardArtwork: {fileID: 21300000, guid: f266a7dd58bcd9d44865ba2890ddb727, type: 3}
   characterIndex: 4
   health: 12
   flicks: 1

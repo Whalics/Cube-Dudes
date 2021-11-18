@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rest
   description: Skip your turn and regain 3 health!
-  artwork: {fileID: 21300000, guid: 79d18e8778b23854ca193626758016ed, type: 3}
+  artwork: {fileID: 21300000, guid: 34c8f36e8dbf78f478aa901e5ffcbf16, type: 3}

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Medkit
   description: Immediately regain 2 health!
-  artwork: {fileID: 21300000, guid: 3188ef21f0e89a54aa9aba27f5d3d28a, type: 3}
+  artwork: {fileID: 21300000, guid: 861ed974c475c0c4bb26b9f90555e349, type: 3}

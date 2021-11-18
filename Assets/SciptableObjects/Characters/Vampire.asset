@@ -16,7 +16,7 @@ MonoBehaviour:
   myCharacter: 6
   description: Regain health based on damage done.
   meshMaterial: {fileID: 2100000, guid: 54cddc39606e85548bf92f42ba275497, type: 2}
-  characterCardArtwork: {fileID: 0}
+  characterCardArtwork: {fileID: 21300000, guid: f266a7dd58bcd9d44865ba2890ddb727, type: 3}
   characterIndex: 7
   health: 10
   flicks: 1

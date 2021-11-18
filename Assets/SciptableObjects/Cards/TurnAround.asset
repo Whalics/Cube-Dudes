@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: TurnAround
   description: The next player flicks backwards!
-  artwork: {fileID: 21300000, guid: de5144d343acceb4d96e017de84bc8f0, type: 3}
+  artwork: {fileID: 21300000, guid: 8fd7dffaa2b637744bcbda144c4b3741, type: 3}

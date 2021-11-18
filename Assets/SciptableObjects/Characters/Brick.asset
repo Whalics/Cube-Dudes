@@ -16,7 +16,7 @@ MonoBehaviour:
   myCharacter: 1
   description: Turn into a brick wall.
   meshMaterial: {fileID: 2100000, guid: 8c2e255261c0969408c5eeb7d5f07342, type: 2}
-  characterCardArtwork: {fileID: 0}
+  characterCardArtwork: {fileID: 21300000, guid: f266a7dd58bcd9d44865ba2890ddb727, type: 3}
   characterIndex: 2
   health: 15
   flicks: 1
