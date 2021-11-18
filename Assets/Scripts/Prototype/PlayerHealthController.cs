@@ -21,12 +21,21 @@ public class PlayerHealthController : MonoBehaviour
 
 
     public void TakeDamage(int dmg){
-        health -= dmg;
+        if(health > dmg){
+            health -= dmg;
+        }
+        else if (health <= dmg)
+        Die();
+
         healthSlider.value = health;
     }
     
     public void GainHealth(int heal){
         health+=heal;
         healthSlider.value = health;
+    }
+
+    public void Die(){
+        this.gameObject.SetActive(false);
     }
 }
