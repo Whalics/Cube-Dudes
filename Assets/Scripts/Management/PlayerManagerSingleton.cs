@@ -9,7 +9,7 @@ public class PlayerManagerSingleton : MonoBehaviour
     public int playerSelecting;
     public Character[] playerCharacters;
     public Character[] charactersIndex;
-
+    public string sceneName;
         
     SceneLoader sceneloader;
     
@@ -52,7 +52,7 @@ public class PlayerManagerSingleton : MonoBehaviour
             playerCharacters[playerSelecting-1] = charactersIndex[index-1];   
         }
         if(playerSelecting == playerCount && sceneloader != null){
-             sceneloader.LoadScene("Prototype");
+             sceneloader.LoadScene(sceneName);
              }
     }
 }
