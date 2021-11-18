@@ -58,4 +58,9 @@ public class ShootController : MonoBehaviour
         _forceStrength=25f;
         forceslidercontroller.SetSliderValue(_forceStrength);
     }
+
+    public void CancelFlick(){
+        gamemanager.ForceSliderShake();
+        Reset();
+    }
 }

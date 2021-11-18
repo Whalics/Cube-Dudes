@@ -26,4 +26,8 @@ public class ForceSliderController : MonoBehaviour
     public void SliderOut(){
         sliderAnimator.Play("Out_TEMP");
     }
+
+    public void SliderShake(){
+        sliderAnimator.Play("Shake_TEMP");
+    }
 }

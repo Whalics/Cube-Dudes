@@ -8,12 +8,14 @@ public class PlayerInputManager : MonoBehaviour
     public InputAction inputController;
     [SerializeField] Vector2 movementInput = Vector2.zero;
     public bool flicked;
+    public bool sliderIn;
     public float flicking;
     public bool moving;
     public bool movePressed;
     public float turnHold;
     public bool canMenu = true;
     public float menuBTNPress;
+    public float canceled;
     public bool menuVisible;
     [SerializeField] ShootController shootcontroller;
     [SerializeField] CameraManager cameramanager;
@@ -56,6 +58,21 @@ public class PlayerInputManager : MonoBehaviour
     public void Flick(InputAction.CallbackContext context){
         if(!disableControls)
         flicked = !context.ReadValue<bool>();
+        if(canceled == 1){
+            flicked = false;
+            canceled = 0;
+        }
+    }
+
+    public void Cancel(InputAction.CallbackContext context){
+        if(!disableControls && !flicked && !shootcontroller.isShot){
+        canceled = context.ReadValue<float>();
+        if(flicking > 0){
+            shootcontroller.CancelFlick();
+            flicking = 0;
+            canMenu = true;
+        }
+        }
     }
 
     public void HUDMenu(InputAction.CallbackContext context){
@@ -70,6 +87,10 @@ public class PlayerInputManager : MonoBehaviour
             }
             else if(!menuVisible){
                 gamemanager.DisplayHUDMenu();
+                if(sliderIn){
+                    gamemanager.ForceSliderOut();
+                    sliderIn = false;
+                }
                 menuVisible = true;
             }
         }
@@ -81,12 +102,18 @@ public class PlayerInputManager : MonoBehaviour
     }
 
     public void OnFlickDown(InputAction.CallbackContext context){
-        if(!disableControls && !flicked){
+        if(!disableControls && !flicked && canceled == 0){
             flicking = context.ReadValue<float>();
             canMenu = false;
             menuVisible = false;
+            if(!sliderIn){
             gamemanager.ForceSliderIn();
+            sliderIn = true;
+            }
             gamemanager.CloseHUDMenu();
+        }
+        if(canceled == 1){
+            flicking = 0;
         }
     }
     
@@ -117,11 +144,15 @@ public class PlayerInputManager : MonoBehaviour
 
         Debug.Log(shootcontroller._forceStrength);
         if(flicking > 0){
-            // flicked = true;
+            if(canceled == 0)
             shootcontroller.IncreaseForce(forceIncrease);
         }
-        if(flicked && shootcontroller._forceStrength > 26){
+        if(flicked && shootcontroller._forceStrength > 26 && canceled == 0){
              shootcontroller.ShootPlayer();
+        }
+        if(flicked && shootcontroller._forceStrength > 26 && canceled == 1){
+            shootcontroller.CancelFlick();
+            flicked = false;
         }
         if(disableControls && turnHold > 0){
             Debug.Log("button pressed");
@@ -143,6 +174,7 @@ public class PlayerInputManager : MonoBehaviour
     }
     
     public void Reset(){
+        sliderIn = false;
         flicked = false;
         flicking = 0;
         if(gamemanager.GetFlicks() == 0)

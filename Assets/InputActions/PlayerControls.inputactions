@@ -100,7 +100,7 @@
                     "name": "",
                     "id": "8598489b-7b2e-4d9c-a66b-e74bccf99b78",
                     "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "Controller",
                     "action": "Back",

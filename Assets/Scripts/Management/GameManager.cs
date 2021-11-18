@@ -131,5 +131,9 @@ public class GameManager : MonoBehaviour
     public void ForceSliderOut(){
         forceslidercontroller.SliderOut();
     }
+
+    public void ForceSliderShake(){
+         forceslidercontroller.SliderShake();
+    }
     
 }
