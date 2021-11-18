@@ -20,6 +20,6 @@ MonoBehaviour:
   characterIndex: 2
   health: 15
   flicks: 1
-  damage: 3
+  damage: 20
   cooldown: 2
   portrait: {fileID: 21300000, guid: a2d82e557d6bb4a4a929bc0c0b5c58bd, type: 3}

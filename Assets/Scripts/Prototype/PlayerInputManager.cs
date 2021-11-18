@@ -66,12 +66,16 @@ public class PlayerInputManager : MonoBehaviour
 
     public void Cancel(InputAction.CallbackContext context){
         if(!disableControls && !flicked && !shootcontroller.isShot){
-        canceled = context.ReadValue<float>();
-        if(flicking > 0){
-            shootcontroller.CancelFlick();
-            flicking = 0;
-            canMenu = true;
-        }
+            canceled = context.ReadValue<float>();
+            if(flicking > 0){
+                shootcontroller.CancelFlick();
+                flicking = 0;
+                canMenu = true;
+            }
+            if(menuVisible){
+                gamemanager.CloseHUDMenu();
+                menuVisible = false;
+            }
         }
     }
 

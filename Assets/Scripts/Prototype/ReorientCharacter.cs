@@ -38,6 +38,7 @@ public class ReorientCharacter : MonoBehaviour
         targetposy = new Vector3(target.position.x, transform.position.y,target.position.z);
         targetRotation = Quaternion.LookRotation (targetposy - transform.position);
         _rb = this.gameObject.GetComponent<Rigidbody>();
+        if(_rb != null)
         _rb.AddForce(Vector3.up*15,ForceMode.Impulse);
     }
 
