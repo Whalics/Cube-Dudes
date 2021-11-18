@@ -9128,6 +9128,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ce762b0bdbbc1d741aec7640f069dfce, type: 2}
   - {fileID: 11400000, guid: 7e2e4abf415434a44b211828999d009b, type: 2}
   - {fileID: 11400000, guid: b32db90fd3a2ace42a1a718e105dc8b2, type: 2}
+  sceneName: Prototype
 --- !u!4 &2047775385
 Transform:
   m_ObjectHideFlags: 0
