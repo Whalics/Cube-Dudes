@@ -62,6 +62,18 @@ public class GameManager : MonoBehaviour
         return GetPlayer().transform;
     }
 
+    public bool PlayerDead(){
+        return GetPlayer().GetComponent<CharacterDeath>().dead;
+    }
+
+    public bool XPlayerDead(int player){
+        return GetXPlayer(player).GetComponent<CharacterDeath>().dead;
+    }
+
+    // public void TMGetNextPlayerTurn(int player){
+    //     turnmanager.GetNextPlayersTurn(player);
+    // }
+
     public Vector3 GetPlayerPos(){
         return GetPlayer().transform.position;
     }

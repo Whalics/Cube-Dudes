@@ -8,8 +8,11 @@ public class PlayerHealthController : MonoBehaviour
     [SerializeField] int health;
     [SerializeField] int maxHealth;
     [SerializeField] Slider healthSlider;
-
+    [SerializeField] CharacterDeath characterdeath;
+    
+    [SerializeField] Rigidbody playerRb;
     void Start(){
+        characterdeath = this.gameObject.GetComponent<CharacterDeath>();
         health = maxHealth;
         healthSlider.maxValue = maxHealth;
         healthSlider.value = health;
@@ -23,11 +26,14 @@ public class PlayerHealthController : MonoBehaviour
     public void TakeDamage(int dmg){
         if(health > dmg){
             health -= dmg;
+            healthSlider.value = health;
         }
-        else if (health <= dmg)
-        Die();
+        else if (health <= dmg){
+            healthSlider.value = 0;
+            characterdeath.Die();
+        }
 
-        healthSlider.value = health;
+       
     }
     
     public void GainHealth(int heal){
@@ -35,7 +41,5 @@ public class PlayerHealthController : MonoBehaviour
         healthSlider.value = health;
     }
 
-    public void Die(){
-        this.gameObject.SetActive(false);
-    }
+    
 }

@@ -55,15 +55,15 @@ public class PlayerCollisionController : MonoBehaviour
                     collision.gameObject.GetComponent<PlayerHealthController>().TakeDamage(characterclass.damage);
                 }
                 collisionRb = collision.gameObject.GetComponent<Rigidbody>();
-                TransferVelocity();
+                TransferVelocity(collisionRb, 1.2f, 2.5f);
             }
         }
     }
 
-    void TransferVelocity(){
+    public void TransferVelocity(Rigidbody crb, float mult, float reduce){
         
-        collisionRb.AddForce(_rb.velocity*1.2f, ForceMode.Impulse);
-        _rb.velocity/=2.5f;
+        crb.AddForce(_rb.velocity*mult, ForceMode.Impulse);
+        _rb.velocity/=reduce;
     }
 
     public void ClearMotion(){

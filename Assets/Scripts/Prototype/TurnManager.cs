@@ -76,14 +76,23 @@ public class TurnManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         //reorient players
         for(int i = 0; i < players.Length; i++){
-            reorientcharacter = gamemanager.GetXPlayer(i).GetComponent<ReorientCharacter>();
-            reorientcharacter.SetVariables();
-            reorientcharacter.reorienting = true;
-            yield return new WaitForSeconds(Random.Range(0.1f,0.3f));
+            if(!gamemanager.XPlayerDead(i)){
+                reorientcharacter = gamemanager.GetXPlayer(i).GetComponent<ReorientCharacter>();
+                reorientcharacter.SetVariables();
+                reorientcharacter.reorienting = true;
+                yield return new WaitForSeconds(Random.Range(0.1f,0.3f));
+            }   
         }
         yield return new WaitForSeconds(1.5f);
         gamemanager.ForceSliderOut();
         if(characterclass.ReturnFlicks() == 0){
+            characterclass = gamemanager.GetCharacterClass();
+            characterclass.ResetFlicks();
+
+            playercollisioncontroller.ResetCollision();
+            playercollisioncontroller.myTurn = false;
+
+            SetNextPlayersTurn();
             TurnWindow();
             gamemanager.ResetTurn(); //resets shoot controller, input controller, and timer
         }
@@ -111,18 +120,7 @@ public class TurnManager : MonoBehaviour
     public IEnumerator NextTurn(){
         HideTurnWindow();
         
-        characterclass = gamemanager.GetCharacterClass();
-        characterclass.ResetFlicks();
-
-        playercollisioncontroller.ResetCollision();
-        playercollisioncontroller.myTurn = false;
-
-        if(playerTurn < players.Length-1){
-            playerTurn++;
-        }
-        else{
-            playerTurn = 0;
-        }
+        
 
         gamemanager.HideDeck();
         gamemanager.ShowDeck();
@@ -147,6 +145,15 @@ public class TurnManager : MonoBehaviour
         TurnWindowCanvas.SetActive(false);
     }
 
-
-
+    public void SetNextPlayersTurn(){
+        do{
+            if(playerTurn < players.Length-1){
+                playerTurn++;
+            }
+            else if(playerTurn == players.Length-1){
+                playerTurn = 0;
+            }
+        }
+        while(gamemanager.PlayerDead());
+    }
 }
