@@ -1448,12 +1448,14 @@ MonoBehaviour:
     m_SingletonActionBindings: []
   movementInput: {x: 0, y: 0}
   flicked: 0
+  sliderIn: 0
   flicking: 0
   moving: 0
   movePressed: 0
   turnHold: 0
   canMenu: 1
   menuBTNPress: 0
+  canceled: 0
   menuVisible: 0
   shootcontroller: {fileID: 0}
   cameramanager: {fileID: 0}
@@ -38111,7 +38113,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -43063,15 +43065,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674740750599912869, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3261422825253589663, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3261422825253589663, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4991122929933023262, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: character
@@ -43079,15 +43081,15 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b32db90fd3a2ace42a1a718e105dc8b2, type: 2}
     - target: {fileID: 7414070823150201275, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7414070823150201275, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7414070823150201275, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
@@ -43097,7 +43099,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh63190
+  m_Name: pb_Mesh98122
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -44667,7 +44669,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh63510
+  m_Name: pb_Mesh98560
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -44922,7 +44924,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -48558,7 +48560,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh63016
+  m_Name: pb_Mesh97814
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -49635,15 +49637,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674740750599912869, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3261422825253589663, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3261422825253589663, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4991122929933023262, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: character
@@ -49651,15 +49653,15 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 3ddf30d698cebc140950f1df1730c6d7, type: 2}
     - target: {fileID: 7414070823150201275, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7414070823150201275, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7414070823150201275, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
@@ -50084,7 +50086,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -50312,6 +50314,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711851406}
   m_CullTransparentMesh: 1
+--- !u!1001 &1722911599
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
+      propertyPath: m_Name
+      value: SkyBox
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54408546e66d22441b9a14a887d12fd1, type: 3}
 --- !u!1 &1723595356
 GameObject:
   m_ObjectHideFlags: 0
@@ -51125,6 +51184,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   fill: {fileID: 917545092}
   forceSlider: {fileID: 1808436685}
+  sliderAnimator: {fileID: 0}
 --- !u!1 &1809097514
 GameObject:
   m_ObjectHideFlags: 0
@@ -51226,15 +51286,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674740750599912869, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3261422825253589663, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3261422825253589663, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4991122929933023262, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: character
@@ -51242,15 +51302,15 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: ce762b0bdbbc1d741aec7640f069dfce, type: 2}
     - target: {fileID: 7414070823150201275, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7414070823150201275, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7414070823150201275, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dc1f98e8abb0aa4398d675567d97db1, type: 3}
@@ -52057,6 +52117,8 @@ MonoBehaviour:
   characterclass: {fileID: 0}
   playerinputmanager: {fileID: 146916802}
   hudmenucontroller: {fileID: 0}
+  deckmanager: {fileID: 0}
+  forceslidercontroller: {fileID: 0}
 --- !u!4 &1960161802
 Transform:
   m_ObjectHideFlags: 0
@@ -53357,12 +53419,14 @@ MonoBehaviour:
     m_SingletonActionBindings: []
   movementInput: {x: 0, y: 0}
   flicked: 0
+  sliderIn: 0
   flicking: 0
   moving: 0
   movePressed: 0
   turnHold: 0
   canMenu: 1
   menuBTNPress: 0
+  canceled: 0
   menuVisible: 0
   shootcontroller: {fileID: 0}
   cameramanager: {fileID: 0}
