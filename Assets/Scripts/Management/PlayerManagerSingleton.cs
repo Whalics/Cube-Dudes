@@ -12,6 +12,7 @@ public class PlayerManagerSingleton : MonoBehaviour
     public string sceneName;
         
     SceneLoader sceneloader;
+    MainMenuController mainmenucontroller;
     
     // Start is called before the first frame update
     private void Awake(){
@@ -29,21 +30,47 @@ public class PlayerManagerSingleton : MonoBehaviour
         #endregion
 
         sceneloader = GameObject.Find("SceneLoader").GetComponent<SceneLoader>();
+        mainmenucontroller = GameObject.Find("MainMenuController").GetComponent<MainMenuController>();
     }
 
     public void Set2Player(){
-        playerCount = 2;
-        playerCharacters = new Character[2];
+        if(playerCount != 2){
+            if(mainmenucontroller != null){
+               mainmenucontroller.HideCharacterButtons();
+           }
+            ResetPlayerSelection();
+            playerCount = 2;
+            playerCharacters = new Character[2];
+        }
    }
 
    public void Set3Player(){
-        playerCount = 3;
-        playerCharacters = new Character[3];
+       if(playerCount != 3){
+           if(mainmenucontroller != null){
+               mainmenucontroller.HideCharacterButtons();
+           }
+            ResetPlayerSelection();
+            playerCount = 3;
+            playerCharacters = new Character[3];
+       }
    }
     
     public void Set4Player(){
-        playerCount = 4;
-        playerCharacters = new Character[4];
+        if(playerCount != 4){
+            if(mainmenucontroller != null){
+               mainmenucontroller.HideCharacterButtons();
+           }
+            ResetPlayerSelection();
+            playerCount = 4;
+            playerCharacters = new Character[4];
+        }
+   }
+
+   public void ResetPlayerSelection(){
+       playerSelecting = 0;
+       for(int i = 0; i > playerCharacters.Length; i++){
+           playerCharacters[i] = null;
+       }
    }
     
     public void SelectCharacter(int index){

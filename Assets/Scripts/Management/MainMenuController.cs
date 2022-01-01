@@ -13,7 +13,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject p4;
     public GameObject c1;
     public GameObject[] selectors;
-
+    public GameObject selectorHider;
 
     public void Start(){
         ShowCursor();
@@ -54,6 +54,12 @@ public class MainMenuController : MonoBehaviour
     public void PlayMainTheme(){
         if(_mainThemeAudio != null){
             AudioManagerSingleton.Instance.PlaySong(_mainThemeAudio);
+        }
+    }
+
+    public void HideCharacterButtons(){
+        for(int i = 0; i < 4; i++){
+            selectors[i].transform.position = selectorHider.transform.position; 
         }
     }
 
