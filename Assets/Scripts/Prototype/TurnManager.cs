@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class TurnManager : MonoBehaviour
 {
     public GameObject[] players;
+    public int deadPlayers = 0;
     public int playerTurn = 0;
     public bool flickOver;
 
@@ -16,9 +19,10 @@ public class TurnManager : MonoBehaviour
     TimerController timercontroller;
 
     public GameObject TurnWindowCanvas;
+    public TMP_Text winText;
 
     GameManager gamemanager;
-    void Start()
+    void Awake()
     {
 
         gamemanager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -27,10 +31,14 @@ public class TurnManager : MonoBehaviour
         cameramanager = GameObject.Find("CameraRotator").GetComponent<CameraManager>();
         playercollisioncontroller = players[playerTurn].GetComponent<PlayerCollisionController>();
         
-        characterclass = gamemanager.GetCharacterClass();
+       
+    }
 
+    void Start(){
+        characterclass = gamemanager.GetCharacterClass();
         playerTurn = 0;
         playercollisioncontroller.myTurn = true;
+        //dead = new bool[players.Length];
     }
 
     void Update()
@@ -93,7 +101,9 @@ public class TurnManager : MonoBehaviour
             playercollisioncontroller.myTurn = false;
 
             SetNextPlayersTurn();
-            TurnWindow();
+            if(deadPlayers != players.Length-1){
+                TurnWindow();
+            }
             gamemanager.ResetTurn(); //resets shoot controller, input controller, and timer
         }
         else{
@@ -106,7 +116,9 @@ public class TurnManager : MonoBehaviour
     public IEnumerator EndTurn(){ //this is for the timer running out. regardless of flicks remaining, the turn will end.
         gamemanager.ResetTurn(); //resets shoot controller, input controller, and timer
         gamemanager.ResetFlick();
-        TurnWindow(); 
+        // if(deadPlayers != players.Length-1){
+        //     TurnWindow(); 
+        // }
         yield break;
     }
 
@@ -146,14 +158,32 @@ public class TurnManager : MonoBehaviour
     }
 
     public void SetNextPlayersTurn(){
+        deadPlayers = 0;
+        for(int i = 0; i < players.Length; i++){
+                if(gamemanager.XPlayerDead(i)){
+                    deadPlayers++;
+                    if(deadPlayers == players.Length-1){
+                        if(gamemanager.GetTurn() != gamemanager.GetPlayerCount())
+                            winText.text = "Player " + (gamemanager.GetTurn()+1).ToString() + " Wins!";
+                        else
+                            winText.text = "Player 1 Wins!";
+                    }
+                }
+            }
         do{
             if(playerTurn < players.Length-1){
+                
+                
                 playerTurn++;
             }
             else if(playerTurn == players.Length-1){
                 playerTurn = 0;
             }
+
+            
         }
         while(gamemanager.PlayerDead());
+
+        
     }
 }

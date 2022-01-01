@@ -171,6 +171,7 @@ public class PlayerInputManager : MonoBehaviour
                 turnHold = 0;
                 turnslidercontroller.ResetSlider();
                 StartCoroutine(turnmanager.NextTurn());
+                canMenu = true;
             }
             
             
